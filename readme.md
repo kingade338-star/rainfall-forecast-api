@@ -5,7 +5,7 @@ temperature and humidity.
 
 ## Run
 pip install fastapi uvicorn
-uvicorn app:app --reload
+python -m uvicorn app:app --reload
 
 ## Example request
 curl -X POST http://127.0.0.1:8000/predict \
@@ -23,6 +23,7 @@ returns HTTP 422 with one message per bad field.
 - Only covers Oyo State and the temperature range -10 to 60 C.
 - Does not use wind, pressure or satellite data.
 - Probabilities are not calibrated and should not guide safety decisions.
+- The weights are placeholders, so the probabilities are for demonstration only.
 
 ## Logging
 Each request's time, inputs and prediction go to requests.log.
